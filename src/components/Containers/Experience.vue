@@ -1,19 +1,26 @@
 <template lang="pug">
-div.mainDiv
-    q-card(ref="exp-container"
-     style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
-       ).text-white.exp-container
-      q-card-section
-        |{{ experience }}
+include ../../assets/strings/en.pug
+div.main-div
+    div(v-if="BannerOne").experience-div-one
+      div.experience-shape-one
+        banner-one
+      div.experience-text-one
+        |{{experience}}
+
 
     
 </template>
 
 <script>
+import BannerOne from "../Shapes/BannerOne"
 export default {
   name: "Experience",
   props: {
-    experience: String
+    experience: String,
+    BannerOne: Boolean
+  },
+  components: {
+    BannerOne
   },
   data: () => ({
     circleToggle: true,
@@ -36,15 +43,24 @@ export default {
       });
     }
   },
-  mounted: function() {
-    this.rollCircle();
-  }
+  
 };
 </script>
 
 <style lang="sass" scoped>
+@import '@/assets/sass/_font' 
+@include font('Montserrat-Medium', '../../assets/fonts/Montserrat-Medium')
 
-.exp-container
-  max-width: 300px
-  text-align: justify
+.main-div
+  font-family: 'Montserrat-Medium'
+
+@media (min-width: 1450px)
+  .experience-text-one
+    position: absolute
+    top: 32%
+    left: 29em
+    width: 180px
+    transform: rotate(10deg)
+    overflow-wrap: break-word
+
 </style>
