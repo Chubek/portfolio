@@ -7,20 +7,30 @@ div.main-div
       div.experience-text-one
         |{{experience}}
 
+    div(v-if="BannerTwo").experience-div-two
+      div.experience-shape-two
+        banner-two
+      div.experience-text-two
+        |{{exxperience}}
+
 
     
 </template>
 
 <script>
-import BannerOne from "../Shapes/BannerOne"
+import BannerOne from "../Shapes/BannerOne";
+import BannerTwo from "../Shapes/BannerTwo";
 export default {
   name: "Experience",
   props: {
     experience: String,
-    BannerOne: Boolean
+    BannerOne: Boolean,
+    exxperience: String,
+    BannerTwo: Boolean
   },
   components: {
-    BannerOne
+    BannerOne,
+    BannerTwo
   },
   data: () => ({
     circleToggle: true,
@@ -31,7 +41,7 @@ export default {
   methods: {
     rollCircle: function() {
       console.log(this.$refs);
-      const targets = this.$el;      
+      const targets = this.$el;
       console.log(targets);
       this.$anime({
         targets: targets,
@@ -39,11 +49,9 @@ export default {
         scale: this.$anime.random(72, 180) / 100,
         delay: this.$anime.stagger(100),
         loop: true
-
       });
     }
-  },
-  
+  }
 };
 </script>
 
@@ -58,9 +66,21 @@ export default {
   .experience-text-one
     position: absolute
     top: 32%
-    left: 29em
+    left: 28em
     width: 180px
-    transform: rotate(10deg)
+    transform: rotate(0deg)
     overflow-wrap: break-word
+  
+  .experience-shape-one
+    transform: rotate(-10deg)
+
+  .experience-div-two
+    position: relative
+
+  .experience-text-two
+    position: absolute
+    top: 33%
+    width: 300px
+    left: 16em
 
 </style>

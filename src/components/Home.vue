@@ -2,19 +2,15 @@
 include ../assets/strings/en.pug
 
 div.main-div
+  div.header
+    gear
+
+  div(v-if="isIe").isIe
+    |"Stop using Internet Explorer goddamit! At least use Edge!"
   div.nail-one
     img(src="../assets/img/nail-post.png" width="20" height="20").nail-one-img
   div.nail-two
     img(src="../assets/img/nail-post.png" width="20" height="20").nail-two-img
-  div.header
-    div.logo-div
-      svg(ref="heart" width="300" height="230").heart
-          polygon(ref="heart-polygon" style="stroke-linejoin:miter; stroke:white; stroke-width:5; fill: red;"
-          points="100 100, 150 150, 200 100, 200 75, 185 60, 165 60, 150 75, 135 60, 115 60, 100 75, 100 100")/
-      svg(ref="logo" width="250" height="30").logo
-        path(d="M 20,20 C 80,60 100,40 120,20" fill="transparent" ref="logo-path").logo-path
-        text(ref="logo-text" x=0 y=15 fill="#b38600").logo-text=STR_SITE_TITLE
-  
   
   div.arabesque-div
     arabesque
@@ -25,6 +21,10 @@ div.main-div
   div.experience-div-one
     experience(experience=STR_EXP_TETRIS BannerOne)
 
+  div.experience-div-two 
+    experience(exxperience=STR_EXP_WORDPRESS BannerTwo)
+
+
 
 </template>
 
@@ -32,68 +32,57 @@ div.main-div
 import Experience from "./Containers/Experience";
 import Arabesque from "./Shapes/Arabesque";
 import Intro from "./Containers/Intro";
+import Gear from "./Shapes/Gear";
 export default {
   name: "Home",
   components: {
     Experience,
     Arabesque,
     Intro,
+    Gear
   },
-  data: () => ({ }),
+  data: () => ({
+    isIe: false
+  }),
   methods: {
-    beatHeart: function () {
+    beatlogo: function() {
       console.log(this.$refs);
-      const targets = this.$refs["heart"];
-      const logoPath = this.$anime.path(this.$refs["logo-path"]);
-      this.$anime
+      //const targets = this.$refs["logo"];
+      //const logoPath = this.$anime.path(this.$refs["logo-path"]);
+      /*this.$anime
         .timeline({ loop: true, direction: "alternate" })
         .add({
           targets: targets,
           translateX: 50,
           translateY: 40,
           scale: this.$anime.random(72, 180) / 100,
-          delay: this.$anime.stagger(100),
-        })
-        .add({
-          targets: this.$refs["heart-polygon"],
-          "stroke-width": [0, 10],
-          delay: this.$anime.stagger(100),
-        })
-        .add({
+          delay: this.$anime.stagger(100)
+        }).add({
           targets: this.$refs["logo"],
           skew: [0, 180],
           rotate: logoPath("angle"),
           translateX: logoPath("x"),
           translateY: logoPath("y"),
           easing: "linear",
-          duration: 2000,
-        })
-        .add({
-          targets: this.$refs["logo-text"],
-          opacity: [100, 0],
-        });
-    },
+          duration: 2000
+        })*/
+    }
   },
-  mounted: function () {
-    this.beatHeart();
-  },
+  mounted: function() {
+    this.beatlogo();
+    const ua = window.navigator.userAgent;
+    const isIE = /MSIE|Trident/.test(ua);
+
+    if (isIE) {
+      this.isIE = true;
+    }
+  }
 };
 </script>
 
 <style lang="sass" scoped>
 @import '@/assets/sass/_font'
 @include font('Aftaserif', '../assets/fonts/Aftaserif')
-
-.header
-  overflow-x: hidden
-  overflow-y: hidden
-  height: 30em
-
-.logo-text
-  text-anchor: right
-  font-family: Aftaserif
-  font-size: 16px
-  letter-spacing: 2px
 
 .nail-one
   transform: rotate(145deg)
@@ -106,14 +95,17 @@ export default {
   height: 20px
   z-index: 1
 
+.isIe
+  background-color: white
+
+
 @media (min-width: 1450px)
-  .logo
-    position: relative
-    top: 2%
-    left: -9%
+  .header
+    margin-left: 2em
+    margin-top: 2em
   .arabesque-div
     position: absolute
-    top: -5%
+    top: -3%
     right: -2%
   .blurbs-intro
     margin-top: -10em
@@ -130,8 +122,8 @@ export default {
 
   .nail-two
     position: absolute
-    top: 60em
-    right: 60em
-    
+    top: 78em
+    right: 63em
+
 
 </style>

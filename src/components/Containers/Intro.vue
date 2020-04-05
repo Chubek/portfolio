@@ -42,7 +42,7 @@ export default {
         shape-outside: circle(50%)
     .intro-blurb
         position: absolute
-        top: 42%
+        top: 30%
         left: 17%
         width: 20em
         transform: rotate(-20deg)
