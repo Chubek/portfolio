@@ -15,14 +15,32 @@ div.main-div
   div.arabesque-div
     arabesque
 
+  div.intro-arrow
+    arrow-left(:texts=[STR_SITE_SUBTITLE_WMD, STR_SITE_SUBTITLE_AI, STR_SITE_SUBTITLE_GD, STR_SITE_SUBTITLE_BOT])
+
   div.blurbs-intro
     intro(intro=STR_SITE_DESC)
+
+  div.experience-arrow
+    arrow-right(:texts="STR_EXP")
 
   div.experience-div-one
     experience(experience=STR_EXP_TETRIS BannerOne)
 
   div.experience-div-two 
     experience(exxperience=STR_EXP_WORDPRESS BannerTwo)
+  
+  div.experience-div-three 
+    experience(exxxperience=STR_BEDLAM BannerThree)
+
+  div.experience-div-four 
+    experience(exxxxperience=STR_EXP_EKELAAS BannerFour)
+
+  div.experience-div-four
+    experience(exxxxxperience=STR_EXP_MOODIMEDIA BannerFive)
+
+
+
 
 
 
@@ -33,16 +51,21 @@ import Experience from "./Containers/Experience";
 import Arabesque from "./Shapes/Arabesque";
 import Intro from "./Containers/Intro";
 import Gear from "./Shapes/Gear";
+import ArrowLeft from "./Shapes/ArrowLeft";
+import ArrowRight from "./Shapes/ArrowRight";
 export default {
   name: "Home",
   components: {
     Experience,
     Arabesque,
     Intro,
-    Gear
+    Gear,
+    ArrowLeft,
+    ArrowRight
   },
   data: () => ({
-    isIe: false
+    isIe: false,
+    STR_EXP: ["Experiences"]
   }),
   methods: {
     beatlogo: function() {
@@ -98,7 +121,6 @@ export default {
 .isIe
   background-color: white
 
-
 @media (min-width: 1450px)
   .header
     margin-left: 2em
@@ -124,6 +146,4 @@ export default {
     position: absolute
     top: 78em
     right: 63em
-
-
 </style>

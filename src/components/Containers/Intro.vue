@@ -1,23 +1,16 @@
 <template>
   <div>
     <div class="blob-svg">
-      <svg
-        width="1100"
-        height="1100"
-        viewBox="0 0 620 620"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="1000" height="1000" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(300,300)">
           <path
-            d="M96.2,-77.9C122,-44.3,138.5,-4.5,132.2,33C125.9,70.4,96.8,105.5,53.7,135.3C10.7,165.2,-46.3,189.8,-77.1,170.8C-107.8,151.9,-112.4,89.3,-131.8,24.3C-151.2,-40.6,-185.5,-107.9,-166,-140C-146.5,-172.1,-73.2,-169.1,-19,-153.9C35.2,-138.7,70.4,-111.4,96.2,-77.9Z"
-            fill="#e65c00"
+            d="M110.6,-78C137.4,-17.3,149.2,37.8,128.3,78.2C107.4,118.7,53.7,144.3,-1.2,145C-56,145.7,-112,121.3,-149.5,71.3C-187.1,21.3,-206.1,-54.3,-178.1,-115.7C-150.1,-177,-75.1,-224,-16.6,-214.4C41.9,-204.8,83.7,-138.7,110.6,-78Z"
+            fill="#ff8000"
           />
         </g>
       </svg>
 
-      <div class="intro-blurb">
-        {{ intro }}
-      </div>
+      <div class="intro-blurb">{{ intro }}</div>
     </div>
   </div>
 </template>
@@ -25,26 +18,31 @@
 export default {
   name: "Intro",
   props: {
-    intro: String,
-  },
+    intro: String
+  }
 };
 </script>
 <style lang="sass" scoped>
 @import '@/assets/sass/_font'
-@include font('Montserrat-Medium', '../../assets/fonts/Montserrat-Medium')
+@include font('Righteous-Regular', '../../assets/fonts/Righteous-Regular')
 
 .intro-blurb
-    font-family: 'Montserrat-Medium'
+  font-family: 'Righteous-Regular'
+  color: #fff
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
 
 @media (min-width: 1450px)
-    .blog-svg
-        position: relative
-        shape-outside: circle(50%)
-    .intro-blurb
-        position: absolute
-        top: 30%
-        left: 17%
-        width: 20em
-        transform: rotate(-20deg)
-        text-align: left
+  .blog-svg
+    position: relative
+    shape-outside: circle(50%)
+  .intro-blurb
+    position: absolute
+    top: 68em
+    left: 22em
+    width: 20em
+    text-align: left    
+    text-align: justify
+    padding: 2px
+    
+
 </style>

@@ -20,13 +20,14 @@ export default {
 };
 </script>
 
-<style lang="sass">
-html, body
-  background: radial-gradient(#660000, #000)
-  max-width: 100%
-  overflow-x: hidden
-
-
-
-
+<style>
+html,
+body {
+  background: radial-gradient(#660000, #000);
+  background-image: url("./assets/img/Endless-Constellation.svg");
+  background-repeat: repeat;
+  background-position: right top;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 </style>
