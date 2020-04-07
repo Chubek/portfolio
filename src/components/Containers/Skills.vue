@@ -52,12 +52,16 @@
           height="30"
         />
 
-        <text font-size="50" transform="translate(50, 250)">
+        <text class="text" font-size="50" transform="translate(50, 250)">
           {{ skill.name }}
         </text>
-        
+        <image
+          :xlink:href="skill.logo"
+          height="200"
+          width="200"
+          transform="translate(250, 0)"
+        />
       </svg>
-      <div> <img :src="skill.logo" /> </div>
     </div>
   </div>
 </template>
@@ -78,6 +82,12 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
+@import '@/assets/sass/_font' 
+@include font('IMFellFrenchCanonSC', '../../assets/fonts/IMFellFrenchCanonSC')
+
 .skills-div
     margin-left: 20em
+
+.text
+    font-family: 'IM_FELL_French_Canon_SC'
 </style>

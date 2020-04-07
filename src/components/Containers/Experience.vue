@@ -62,7 +62,7 @@ export default {
     BannerFour: Boolean,
     exxxxperience: String,
     BannerFive: Boolean,
-    exxxxxperience: String
+    exxxxxperience: String,
   },
   components: {
     BannerOne,
@@ -74,16 +74,16 @@ export default {
     BannerFour,
     PathFour,
     BannerFive,
-    PathFive
+    PathFive,
   },
   data: () => ({
     circleToggle: true,
     squareToggle: true,
     triangleToggle: true,
-    trapezoidToggle: true
+    trapezoidToggle: true,
   }),
   methods: {
-    rollCircle: function() {
+    rollCircle: function () {
       console.log(this.$refs);
       const targets = this.$el;
       console.log(targets);
@@ -92,15 +92,15 @@ export default {
         translateX: 270,
         scale: this.$anime.random(72, 180) / 100,
         delay: this.$anime.stagger(100),
-        loop: true
+        loop: true,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="sass" scoped>
-@import '@/assets/sass/_font' 
+@import '@/assets/sass/_font', '@/assets/sass/_colors'
 @include font('Montserrat-Medium', '../../assets/fonts/Montserrat-Medium')
 
 .main-div
@@ -114,7 +114,7 @@ export default {
     width: 180px
     transform: rotate(0deg)
     overflow-wrap: break-word
-  
+
   .experience-shape-one
     transform: rotate(-10deg)
 
@@ -126,5 +126,4 @@ export default {
     top: 33%
     width: 300px
     left: 16em
-
 </style>

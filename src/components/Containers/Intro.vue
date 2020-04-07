@@ -23,13 +23,13 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-@import '@/assets/sass/_font'
+@import '@/assets/sass/_font', '@/assets/sass/_colors'
 @include font('Righteous-Regular', '../../assets/fonts/Righteous-Regular')
 
 .intro-blurb
   font-family: 'Righteous-Regular'
-  color: #fff
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+  color: $text
+  text-shadow: -1px -1px 0 $stroke, 1px -1px 0 $stroke, -1px 1px 0 $stroke, 1px 1px 0 $stroke
 
 @media (min-width: 1450px)
   .blog-svg
