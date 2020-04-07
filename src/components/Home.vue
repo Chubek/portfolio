@@ -39,8 +39,11 @@ div.main-div
   div.experience-div-four
     experience(exxxxxperience=STR_EXP_MOODIMEDIA BannerFive)
 
+  div.skills-arrow
+   arrow-down(text=STR_SKILL)
 
-
+  div.skills-div
+    skills
 
 
 
@@ -53,6 +56,8 @@ import Intro from "./Containers/Intro";
 import Gear from "./Shapes/Gear";
 import ArrowLeft from "./Shapes/ArrowLeft";
 import ArrowRight from "./Shapes/ArrowRight";
+import ArrowDown from "./Shapes/ArrowDown";
+import Skills from "./Containers/Skills";
 export default {
   name: "Home",
   components: {
@@ -61,7 +66,9 @@ export default {
     Intro,
     Gear,
     ArrowLeft,
-    ArrowRight
+    ArrowRight,
+    ArrowDown,
+    Skills
   },
   data: () => ({
     isIe: false,
