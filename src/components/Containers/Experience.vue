@@ -3,34 +3,34 @@ include ../../assets/strings/en.pug
 div.main-div
     div(v-if="BannerOne").experience-div-one
       div.experience-shape-one
-        banner-one
+        banner-one(:size="size")
       div.experience-text-one
         | {{ experience }}
 
     div(v-if="BannerTwo").experience-div-two
       div.experience-shape-two
-        banner-two
+        banner-two(:size="size")
       div.experience-text-two
-        | {{ exxperience }}
+        | {{ experience }}
 
     div(v-if="BannerThree").experience-div-three
       div.experience-shape-three
-        banner-three
+        banner-three(:size="size")
       div.experience-text-three
-        | {{ exxxperience }}
+        | {{ experience }}
 
 
     div(v-if="BannerFour").experience-div-four
       div.experience-shape-four
-        banner-four 
+        banner-four(:size="size")
       div.experience-text-four
-        | {{ exxxxperience }}
+        | {{ experience }}
 
     div(v-if="BannerFive").experience-div-five
       div.experience-shape-five
-        banner-five
+        banner-five(:size="size")
       div.experience-text-five
-        |{{ exxxxxperience }}
+        |{{ experience }}
 
 
 
@@ -55,14 +55,11 @@ export default {
   props: {
     experience: String,
     BannerOne: Boolean,
-    exxperience: String,
     BannerTwo: Boolean,
     BannerThree: Boolean,
-    exxxperience: String,
     BannerFour: Boolean,
-    exxxxperience: String,
     BannerFive: Boolean,
-    exxxxxperience: String,
+    size: Object
   },
   components: {
     BannerOne,
@@ -74,28 +71,15 @@ export default {
     BannerFour,
     PathFour,
     BannerFive,
-    PathFive,
+    PathFive
   },
   data: () => ({
     circleToggle: true,
     squareToggle: true,
     triangleToggle: true,
-    trapezoidToggle: true,
+    trapezoidToggle: true
   }),
-  methods: {
-    rollCircle: function () {
-      console.log(this.$refs);
-      const targets = this.$el;
-      console.log(targets);
-      this.$anime({
-        targets: targets,
-        translateX: 270,
-        scale: this.$anime.random(72, 180) / 100,
-        delay: this.$anime.stagger(100),
-        loop: true,
-      });
-    },
-  },
+  methods: {}
 };
 </script>
 

@@ -9,7 +9,7 @@
       viewBox="0 0 512 512"
     >
       <title>arrow-right-down-glyph</title>
-      <g fill="#cc7a00">
+      <g fill="#cc7a00" transform="rotate(-45)">
         <path
           d="M7215 4882 c-157 -402 -377 -914 -540 -1256 -36 -77 -64 -145 -61
 -151 2 -7 25 -24 51 -40 39 -22 49 -25 59 -14 7 8 54 62 105 122 92 106 125
@@ -37,7 +37,7 @@
 </template>
 <script>
 export default {
-  name: "ArrowDown",
+  name: "ArrowLeftDown",
   props: {
     text: String
   },
@@ -58,5 +58,5 @@ export default {
 @include font('IndieFlower', '../../assets/fonts/IndieFlower')
 
 .text
-  font-family: 'IndieFlower'
+    font-family: 'IndieFlower'
 </style>

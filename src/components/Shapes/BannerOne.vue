@@ -1,5 +1,10 @@
 <template>
-  <svg width="1600" height="1600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    :width="size.width"
+    :height="size.height"
+    viewBox="0 0 600 600"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <g transform="translate(300,300)">
       <path
         d="M85.6,-116.1C118.2,-94,157.1,-78.8,152.1,-58C147.1,-37.1,98.3,-10.5,93.2,38C88,86.5,126.6,156.9,118.4,198.7C110.1,240.6,55.1,253.8,17.9,229.1C-19.2,204.4,-38.4,141.9,-63,105.3C-87.5,68.8,-117.5,58.4,-117.4,42.1C-117.3,25.8,-87.2,3.6,-72.5,-18C-57.8,-39.6,-58.6,-60.7,-49.1,-90.2C-39.6,-119.8,-19.8,-157.9,3.3,-162.5C26.5,-167.1,52.9,-138.1,85.6,-116.1Z"
@@ -10,8 +15,11 @@
 </template>
 <script>
 export default {
-  name: 'BannerOne'
-}
+  name: "BannerOne",
+  props: {
+    size: Object,
+  },
+};
 </script>
 
 <style></style>

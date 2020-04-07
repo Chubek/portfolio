@@ -6,14 +6,16 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
-    width="820"
-    height="820"
+    :width="size.width"
+    :height="size.height"
     viewBox="0 0 320 240"
-    style="enable-background:new 0 0 320 240;"
+    style="enable-background: new 0 0 320 240;"
     xml:space="preserve"
     fill="#33CC00"
   >
-    <path stroke="black" stroke-width="2"
+    <path
+      stroke="black"
+      stroke-width="2"
       d="M234.01,140.37l-9.77-2.33c-17.58-4.2-19.37-28.51-2.59-35.23l0,0c16.56-6.63,15.08-30.44-2.12-35.12
 	C203.57,63.35,185.8,61,167.5,61c-10.21,0-20.12,0.73-29.58,2.1l-14.41-22.38c-3.2-4.98-9.63-6.76-14.94-4.15L66.8,57.08
 	c-6.04,2.97-8.36,10.44-4.98,16.26c3.1,5.34,6.42,10.42,9.91,15.2C58.68,98.79,51,111.19,51,124.5c0,23.79,24.53,44.7,60.44,55.57
@@ -25,9 +27,11 @@
 
 <script>
 export default {
-  name: "BannerTwo"
+  name: "BannerTwo",
+  props: {
+    size: Object,
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

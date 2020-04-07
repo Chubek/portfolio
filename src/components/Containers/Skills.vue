@@ -8,8 +8,8 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        width="500"
-        height="500"
+        :width="size.width"
+        :height="size.height"
         viewBox="0 0 512 512"
         style="enable-background: new 0 0 512 512;"
         xml:space="preserve"
@@ -57,8 +57,8 @@
         </text>
         <image
           :xlink:href="skill.logo"
-          height="200"
-          width="200"
+          :height="imageSize.height"
+          :width="imageSize.width"
           transform="translate(250, 0)"
         />
       </svg>
@@ -70,6 +70,8 @@
 import EN from "../../assets/strings/en";
 import _ from "lodash";
 export default {
+  name: "Skills",
+  props: { size: Object, imageSize: Object },
   data: () => ({
     skills: EN.SKILLS,
     rands: [],
@@ -82,7 +84,7 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-@import '@/assets/sass/_font' 
+@import '@/assets/sass/_font'
 @include font('IMFellFrenchCanonSC', '../../assets/fonts/IMFellFrenchCanonSC')
 
 .skills-div
