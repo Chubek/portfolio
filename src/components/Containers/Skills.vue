@@ -8,8 +8,8 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        :width="size.width"
-        :height="size.height"
+        :width="width"
+        :height="height"
         viewBox="0 0 512 512"
         style="enable-background: new 0 0 512 512;"
         xml:space="preserve"
@@ -57,8 +57,8 @@
         </text>
         <image
           :xlink:href="skill.logo"
-          :height="imageSize.height"
-          :width="imageSize.width"
+          :height="imageHeight"
+          :width="imageWidth"
           transform="translate(250, 0)"
         />
       </svg>
@@ -71,12 +71,17 @@ import EN from "../../assets/strings/en";
 import _ from "lodash";
 export default {
   name: "Skills",
-  props: { size: Object, imageSize: Object },
+  props: {
+    width: String,
+    height: String,
+    imageWidth: String,
+    imageHeight: String,
+  },
   data: () => ({
     skills: EN.SKILLS,
     rands: [],
   }),
-  mounted: function () {
+  mounted: function() {
     this.skills.forEach(() => {
       this.rands.push(_.random(5, 25));
     });

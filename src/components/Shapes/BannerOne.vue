@@ -1,7 +1,7 @@
 <template>
   <svg
-    :width="size.width"
-    :height="size.height"
+    :width="width"
+    :height="height"
     viewBox="0 0 600 600"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -17,7 +17,8 @@
 export default {
   name: "BannerOne",
   props: {
-    size: Object,
+    width: String,
+    height: String,
   },
 };
 </script>

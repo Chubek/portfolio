@@ -1,80 +1,86 @@
 <template lang="pug">
 include ../assets/strings/en.pug
 
+
+
 div.main-div
-  div.header
-    gear
+    div.app-bar
+        ul.app-bar-ul
+            li
+                <a href="#intro">Intro</a>
+            li
+                <a href="#experience">Experience</a>
+            li
+                <a href="#skills">Skills</a>
+            li
+                <a href="#contact">Contact</a>
 
-  div(v-if="isIe").isIe
-    |"Stop using Internet Explorer goddamit! At least use Edge!"
-  div.nail-one
-    img(src="../assets/img/nail-post.png" width="20" height="20").nail-one-img
-  div.nail-two
-    img(src="../assets/img/nail-post.png" width="20" height="20").nail-two-img
-  
-  div.arabesque-div
-    arabesque
+    div.header
+        gear
+    
 
-  div.intro-arrow(id="#intro")
-    arrow-left(:texts=[STR_SITE_SUBTITLE_WMD, STR_SITE_SUBTITLE_AI, STR_SITE_SUBTITLE_GD, STR_SITE_SUBTITLE_BOT])
+    div.arabesque-div-large
+        arabesque(width="1200" height="1200")
+        
+    section(id="intro")
+        div.intro-arrow
+            arrow-left(:texts=[STR_SITE_SUBTITLE_WMD, STR_SITE_SUBTITLE_AI, STR_SITE_SUBTITLE_GD, STR_SITE_SUBTITLE_BOT])
 
-  div.blurbs-intro
-    intro(intro=STR_SITE_DESC)
+        div.blurbs-intro
+            intro(intro=STR_SITE_DESC)
 
-  div.experience-arrow(id="#experience")
-    arrow-right(:texts="STR_EXP")
+    section(id="experience")
+        div.experience-arrow()
+            arrow-right(:texts="STR_EXP")
 
-  div.experience-div-one
-    experience(experience=STR_EXP_TETRIS :size="{width: 512, height: 512}" BannerOne)
+        div.experience-div-one
+            experience(experience=STR_EXP_TETRIS width="512" height="512" BannerOne)
 
-  div.experience-div-two 
-    experience(experience=STR_EXP_WORDPRESS :size="{width: 512, height: 512}" BannerTwo)
-  
-  div.experience-div-three 
-    experience(experience=STR_BEDLAM :size="{width: 512, height: 512}" BannerThree)
+        div.experience-div-two 
+            experience(experience=STR_EXP_WORDPRESS width="512" height="512" BannerTwo)
 
-  div.experience-div-four 
-    experience(experience=STR_EXP_EKELAAS :size="{width: 512, height: 512}" BannerFour)
+        div.experience-div-three 
+            experience(experience=STR_BEDLAM width="512" height="512" BannerThree)
 
-  div.experience-div-four
-    experience(experience=STR_EXP_MOODIMEDIA :size="{width: 512, height: 512}" BannerFive)
+        div.experience-div-four 
+            experience(experience=STR_EXP_EKELAAS width="512" height="512" BannerFour)
 
-  div.skills-arrow(id="#skills")
-   arrow-down(text=STR_SKILL)
+        div.experience-div-four
+            experience(experience=STR_EXP_MOODIMEDIA width="512" height="512" BannerFive)
 
-  div.skills-div
-    skills(:size="{width: 512, height: 512}" :imageSize="{width: 250, height: 250}")
+    
+    section(id="skills")
+        div.skills-arrow()
+            arrow-down(text=STR_SKILL)
 
-  div.skills-desc-one
-    skills-description(skillDescOne :size="{width: 400, height: 200}" skillDescription=STR_SKILL_AI)
+        div.skills-div
+            skills(width="512" height="512" imageWidth="250" imageHeight="250")
 
-  div.skills-desc-two
-    skills-description(skillDescTwo :size="{width: 400, height: 200}" skillDescription=STR_SKILL_APP)
+        div.skills-desc-one
+            skills-description(skillDescOne width="400" height="200" skillDescription=STR_SKILL_AI)
+    
+        div.skills-desc-two
+            skills-description(skillDescTwo width="400" height="200" skillDescription=STR_SKILL_APP)
 
-  div.skills-desc-three
-    skills-description(skillDescThree :size="{width: 400, height: 200}" skillDescription=STR_SKILL_GAME_DEV)
+        div.skills-desc-three
+            skills-description(skillDescThree width="400" height="200" skillDescription=STR_SKILL_GAME_DEV)
 
-  div.skills-desc-four
-    skills-description(skillDescFour :size="{width: 400, height: 200}" skillDescription=STR_SKILL_BOT)
+        div.skills-desc-four
+            skills-description(skillDescFour width="400" height="200" skillDescription=STR_SKILL_BOT)
 
-  div(id="#contact").arrow-contact
-    arrow-left-down(text=STR_CONTACT)
+    
 
-  div.contact-div
-    q-card(style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)")
-      q-card-section
-        |#{STR_CONTACT_BLURB} and my phone number is:
-        div.phone-number
-          |#{STR_PHONE_NUBMER}
-
-    div.contact-form
-      contact
-      
-
-
-      
-
-
+    section(id="contact")
+        div.arrow-contact
+            arrow-left-down(text=STR_CONTACT)
+        div.contact-div
+            q-card(style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)")
+                q-card-section
+                    |#{STR_CONTACT_BLURB} and my phone number is:
+                    div.phone-number
+                        <a href="tel:09385130604">09385130604</a> 
+                    div.email
+                        <a href="mailto:chubakbidpaa@gmail.com">Chubakbidpaa@gmail.com</a>
 
 </template>
 
@@ -88,7 +94,6 @@ import ArrowRight from "./Shapes/ArrowRight";
 import ArrowDown from "./Shapes/ArrowDown";
 import Skills from "./Containers/Skills";
 import SkillsDescription from "./Containers/SkillsDescription";
-import Contact from "./Containers/Contact";
 import ArrowLeftDown from "./Shapes/ArrowLeftDown";
 export default {
   name: "Home",
@@ -103,45 +108,10 @@ export default {
     ArrowLeftDown,
     Skills,
     SkillsDescription,
-    Contact
   },
   data: () => ({
-    isIe: false,
-    STR_EXP: ["Experiences"]
+    STR_EXP: ["Experiences"],
   }),
-  methods: {
-    beatlogo: function() {
-      console.log(this.$refs);
-      //const targets = this.$refs["logo"];
-      //const logoPath = this.$anime.path(this.$refs["logo-path"]);
-      /*this.$anime
-        .timeline({ loop: true, direction: "alternate" })
-        .add({
-          targets: targets,
-          translateX: 50,
-          translateY: 40,
-          scale: this.$anime.random(72, 180) / 100,
-          delay: this.$anime.stagger(100)
-        }).add({
-          targets: this.$refs["logo"],
-          skew: [0, 180],
-          rotate: logoPath("angle"),
-          translateX: logoPath("x"),
-          translateY: logoPath("y"),
-          easing: "linear",
-          duration: 2000
-        })*/
-    }
-  },
-  mounted: function() {
-    this.beatlogo();
-    const ua = window.navigator.userAgent;
-    const isIE = /MSIE|Trident/.test(ua);
-
-    if (isIE) {
-      this.isIE = true;
-    }
-  }
 };
 </script>
 
@@ -160,32 +130,58 @@ export default {
   height: 20px
   z-index: 1
 
-.isIe
-  background-color: white
+.app-bar a
+    color: white
+    text-decoration: none
+
+.app-bar a:hover
+    color: black
+
+
+.app-bar-ul
+    display: flex
+    list-style: none
+    background-color: #4d0000
+    padding: 3px
+
+.app-bar-ul li
+    margin: 2px
+    padding: 4px
+    background-color: #cc0000
+    border: 1px solid
+    border-radius: 12px
+
+.app-bar-ul li:hover
+    background-color: #ff1a1a
+ 
 
 @media (min-width: 1450px)
-  .header
-    margin-left: 2em
-    margin-top: 2em
-  .arabesque-div
-    position: absolute
-    top: -3%
-    right: -2%
-  .blurbs-intro
-    margin-top: -10em
+    .header
+        margin-left: 2em
+        margin-top: 2em
+    .arabesque-div-large
+        position: absolute
+        top: -5em
+        right: -4em
+    .blurbs-intro
+        margin-top: -10em
 
-  .experience-div-one
-    position: absolute
-    top: 40%
-    right: 10%
+    .experience-div-one
+        position: absolute
+        top: 40%
+        right: 10%
 
-  .nail-one
-    position: absolute
-    top: 40em
-    left: 25em
+    .nail-one
+        position: absolute
+        top: 40em
+        left: 25em
 
-  .nail-two
-    position: absolute
-    top: 78em
-    right: 63em
+    .nail-two
+        position: absolute
+        top: 78em
+        right: 63em
+
+    .intro-arrow
+        margin-top: -10%
+        margin-left: 28%
 </style>

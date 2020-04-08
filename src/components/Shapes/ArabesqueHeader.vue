@@ -7,8 +7,8 @@
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      :width="size.width"
-      :height="size.height"
+      :width="width"
+      :height="height"
       viewBox="0 0 250 100"
       style="enable-background:new 0 0 250 100;"
       xml:space="preserve"
@@ -307,7 +307,8 @@
 export default {
   name: "ArabesqueHeader",
   props: {
-    size: Object
-  }
+    width: String,
+    height: String,
+  },
 };
 </script>

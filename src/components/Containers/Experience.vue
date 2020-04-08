@@ -2,41 +2,35 @@
 include ../../assets/strings/en.pug
 div.main-div
     div(v-if="BannerOne").experience-div-one
-      div.experience-shape-one
-        banner-one(:size="size")
-      div.experience-text-one
-        | {{ experience }}
+        div.experience-shape-one
+            banner-one(:width="width" :height="height")
+        div.experience-text-one
+            |{{ experience }}
 
     div(v-if="BannerTwo").experience-div-two
-      div.experience-shape-two
-        banner-two(:size="size")
-      div.experience-text-two
-        | {{ experience }}
+        div.experience-shape-two
+            banner-two(:width="width" :height="height")
+        div.experience-text-two
+            |{{ experience }}
 
     div(v-if="BannerThree").experience-div-three
-      div.experience-shape-three
-        banner-three(:size="size")
-      div.experience-text-three
-        | {{ experience }}
+        div.experience-shape-three
+            banner-three(:width="width" :height="height")
+        div.experience-text-three
+            |{{ experience }}
 
 
     div(v-if="BannerFour").experience-div-four
-      div.experience-shape-four
-        banner-four(:size="size")
-      div.experience-text-four
-        | {{ experience }}
+        div.experience-shape-four
+            banner-four(:width="width" :height="height")
+        div.experience-text-four
+            |{{ experience }}
 
     div(v-if="BannerFive").experience-div-five
-      div.experience-shape-five
-        banner-five(:size="size")
-      div.experience-text-five
-        |{{ experience }}
-
-
-
-
-
-    
+        div.experience-shape-five
+            banner-five(:width="width" :height="height")
+        div.experience-text-five
+            |{{ experience }}
 </template>
 
 <script>
@@ -45,11 +39,6 @@ import BannerTwo from "../Shapes/BannerTwo";
 import BannerThree from "../Shapes/BannerThree";
 import BannerFour from "../Shapes/BannerFour";
 import BannerFive from "../Shapes/BannerFive";
-import PathOne from "../Paths/PathOne";
-import PathTwo from "../Paths/PathTwo";
-import PathThree from "../Paths/PathThree";
-import PathFour from "../Paths/PathFour";
-import PathFive from "../Paths/PathFive";
 export default {
   name: "Experience",
   props: {
@@ -59,27 +48,18 @@ export default {
     BannerThree: Boolean,
     BannerFour: Boolean,
     BannerFive: Boolean,
-    size: Object
+    width: String,
+    height: String,
   },
   components: {
     BannerOne,
     BannerTwo,
-    PathOne,
-    PathTwo,
     BannerThree,
-    PathThree,
     BannerFour,
-    PathFour,
     BannerFive,
-    PathFive
   },
-  data: () => ({
-    circleToggle: true,
-    squareToggle: true,
-    triangleToggle: true,
-    trapezoidToggle: true
-  }),
-  methods: {}
+  data: () => ({}),
+  methods: {},
 };
 </script>
 

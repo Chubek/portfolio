@@ -2,8 +2,8 @@
   <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
-    :width="size.width"
-    :height="size.height"
+    :width="width"
+    :height="height"
     viewBox="0 0 965.000000 981.000000"
     preserveAspectRatio="xMidYMid meet"
   >
@@ -12,7 +12,7 @@
     </metadata>
     <g
       transform="translate(0.000000,981.000000) scale(0.100000,-0.100000)"
-      fill="#000000"
+      fill="#800000"
       stroke="none"
     >
       <path
@@ -1939,7 +1939,8 @@ c-5 22 -13 31 -35 36 -37 8 -44 4 -76 -51 -14 -24 -30 -41 -36 -38 -5 3 -7 12
 export default {
   name: "Arabesque",
   props: {
-    size: Object,
+    width: String,
+    height: String,
   },
 };
 </script>

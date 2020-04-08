@@ -2,27 +2,27 @@
 div.main-div
     div(v-if="skillDescOne").skill-desc-one
         div.skill-header-one
-            arabesque-header(:size="size")
+            arabesque-header(:width="width" :height="height")
         div.skill-text-one
-            {{ skillDescription }}
+            |{{ skillDescription }}
 
     div(v-if="skillDescTwo").skill-desc-two
         div.skill-header-two
-            arabesque-header(:size="size")
+            arabesque-header(:width="width" :height="height")
         div.skill-text-two
-            {{ skillDescription }}
+            |{{ skillDescription }}
 
     div(v-if="skillDescThree").skill-desc-three
         div.skill-header-three
-            arabesque-header(:size="size")
+            arabesque-header(:width="width" :height="height")
         div.skill-text-three
-            {{ skillDescription }}
+            |{{ skillDescription }}
 
     div(v-if="skillDescFour").skill-desc-for
         div.skill-header-four
-            arabesque-header(:size="size")
+            arabesque-header(:width="width" :height="height")
         div.skill-text-four
-            {{ skillDescription }}
+            |{{ skillDescription }}
 
 </template>
 <script>
@@ -30,7 +30,7 @@ import ArabesqueHeader from "../Shapes/ArabesqueHeader";
 export default {
   name: "Skill",
   components: {
-    ArabesqueHeader
+    ArabesqueHeader,
   },
   props: {
     skillDescOne: Boolean,
@@ -38,7 +38,8 @@ export default {
     skillDescThree: Boolean,
     skillDescFour: Boolean,
     skillDescription: String,
-    size: Object
-  }
+    width: String,
+    height: String,
+  },
 };
 </script>

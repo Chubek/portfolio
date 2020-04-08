@@ -2,8 +2,8 @@
   <div>
     <div class="blob-svg">
       <svg
-        width="size.width"
-        height="size.height"
+        width="width"
+        height="height"
         viewBox="0 0 600 600"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -24,7 +24,8 @@ export default {
   name: "Intro",
   props: {
     intro: String,
-    size: Object,
+    width: String,
+    height: String
   },
 };
 </script>
@@ -43,10 +44,12 @@ export default {
     shape-outside: circle(50%)
   .intro-blurb
     position: absolute
-    top: 68em
-    left: 22em
+    top: 98em
+    left: 50em
     width: 20em
     text-align: left
     text-align: justify
     padding: 2px
+    font-size: 60
+    transform: scale(2)
 </style>
