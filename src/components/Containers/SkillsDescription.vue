@@ -43,3 +43,11 @@ export default {
   },
 };
 </script>
+<style lang="sass" scoped>
+.main-div > div > div:nth-child(2)
+    background-color: #994d00
+    width: 200px
+    margin-top: -20%
+    margin-left: 20%
+
+</style>

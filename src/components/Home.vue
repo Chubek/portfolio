@@ -14,6 +14,8 @@ div.main-div
                 <a href="#skills">Skills</a>
             li
                 <a href="#contact">Contact</a>
+            li
+                <a href="https://www.github.com/chubek">My Github</a>
 
     div.header
         gear
@@ -28,47 +30,52 @@ div.main-div
 
         div.blurbs-intro
             intro(intro=STR_SITE_DESC)
+    hr
 
     section(id="experience")
-        div.experience-arrow()
+        div.experience-arrow
             arrow-right(:texts="STR_EXP")
 
-        div.experience-div-one
-            experience(experience=STR_EXP_TETRIS width="512" height="512" BannerOne)
+        div.experiences
+            div.experience-div-one
+                experience(experience=STR_EXP_TETRIS width="982" height="982" BannerOne)
 
-        div.experience-div-two 
-            experience(experience=STR_EXP_WORDPRESS width="512" height="512" BannerTwo)
+            div.experience-div-two 
+                experience(experience=STR_EXP_WORDPRESS width="782" height="782" BannerTwo)
 
-        div.experience-div-three 
-            experience(experience=STR_BEDLAM width="512" height="512" BannerThree)
+            div.experience-div-three 
+                experience(experience=STR_BEDLAM width="912" height="1012" BannerThree)
 
-        div.experience-div-four 
-            experience(experience=STR_EXP_EKELAAS width="512" height="512" BannerFour)
+            div.experience-div-four 
+                experience(experience=STR_EXP_EKELAAS width="1080" height="1080" BannerFour)
 
-        div.experience-div-four
-            experience(experience=STR_EXP_MOODIMEDIA width="512" height="512" BannerFive)
-
+            div.experience-div-four
+                experience(experience=STR_EXP_MOODIMEDIA width="612" height="612" BannerFive)
+    hr
     
     section(id="skills")
-        div.skills-arrow()
+        div.skills-arrow
             arrow-down(text=STR_SKILL)
 
-        div.skills-div
-            skills(width="512" height="512" imageWidth="250" imageHeight="250")
+        
+        div.skills-and-desc
+            div.skills-div
+                skills(width="512" height="512" imageWidth="225" imageHeight="218")
 
-        div.skills-desc-one
-            skills-description(skillDescOne width="400" height="200" skillDescription=STR_SKILL_AI)
+            duv.skills-desc-div
+                div.skills-desc-one
+                    skills-description(skillDescOne width="400" height="200" skillDescription=STR_SKILL_AI)
     
-        div.skills-desc-two
-            skills-description(skillDescTwo width="400" height="200" skillDescription=STR_SKILL_APP)
+                div.skills-desc-two
+                    skills-description(skillDescTwo width="400" height="200" skillDescription=STR_SKILL_APP)
 
-        div.skills-desc-three
-            skills-description(skillDescThree width="400" height="200" skillDescription=STR_SKILL_GAME_DEV)
+                div.skills-desc-three
+                    skills-description(skillDescThree width="400" height="200" skillDescription=STR_SKILL_GAME_DEV)
 
-        div.skills-desc-four
-            skills-description(skillDescFour width="400" height="200" skillDescription=STR_SKILL_BOT)
+                div.skills-desc-four
+                    skills-description(skillDescFour width="400" height="200" skillDescription=STR_SKILL_BOT)
 
-    
+    hr
 
     section(id="contact")
         div.arrow-contact
@@ -153,7 +160,19 @@ export default {
 
 .app-bar-ul li:hover
     background-color: #ff1a1a
- 
+
+hr
+    border: 4px dotted #b30000
+    border-radius: 5px
+
+.experiences
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin-top: 20em
+
+.skills-and-desc
+    display: flex
 
 @media (min-width: 1450px)
     .header
@@ -165,23 +184,17 @@ export default {
         right: -4em
     .blurbs-intro
         margin-top: -10em
-
-    .experience-div-one
-        position: absolute
-        top: 40%
-        right: 10%
-
-    .nail-one
-        position: absolute
-        top: 40em
-        left: 25em
-
-    .nail-two
-        position: absolute
-        top: 78em
-        right: 63em
+        margin-bottom: -20em
 
     .intro-arrow
         margin-top: -10%
         margin-left: 28%
+
+    .experience-arrow
+        position: absolute
+        top: 165em
+        left: 25%
+
+    .skills-arrow
+        margin-left: 25%
 </style>
