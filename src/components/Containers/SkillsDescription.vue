@@ -30,7 +30,7 @@ import ArabesqueHeader from "../Shapes/ArabesqueHeader";
 export default {
   name: "Skill",
   components: {
-    ArabesqueHeader,
+    ArabesqueHeader
   },
   props: {
     skillDescOne: Boolean,
@@ -39,15 +39,22 @@ export default {
     skillDescFour: Boolean,
     skillDescription: String,
     width: String,
-    height: String,
-  },
+    height: String
+  }
 };
 </script>
 <style lang="sass" scoped>
 .main-div > div > div:nth-child(2)
     background-color: #994d00
-    width: 200px
+    width: 300px
     margin-top: -20%
-    margin-left: 20%
+    margin-left: 12%
+    text-align: justify
+    padding: 2em
+    border-radius: 2em
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+    font-size: 1.2em
+    color: white
+    
 
 </style>

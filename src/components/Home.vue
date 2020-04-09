@@ -81,13 +81,18 @@ div.main-div
         div.arrow-contact
             arrow-left-down(text=STR_CONTACT)
         div.contact-div
-            q-card(style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)")
+            q-card(style="background: radial-gradient(circle, #ff9933 0%, #cc0000 100%)")
                 q-card-section
-                    |#{STR_CONTACT_BLURB} and my phone number is:
+                    |#{STR_CONTACT_BLURB} My phone number and email are:
                     div.phone-number
                         <a href="tel:09385130604">09385130604</a> 
                     div.email
                         <a href="mailto:chubakbidpaa@gmail.com">Chubakbidpaa@gmail.com</a>
+
+    section(id="footer")
+        div.footer-div
+            |Copyright℗ {{ year }} by Chubak Bidpaa - All Rights Reserved
+
 
 </template>
 
@@ -114,11 +119,12 @@ export default {
     ArrowDown,
     ArrowLeftDown,
     Skills,
-    SkillsDescription,
+    SkillsDescription
   },
   data: () => ({
     STR_EXP: ["Experiences"],
-  }),
+    year: (new Date().getYear() - 100) + 2000
+  })
 };
 </script>
 
@@ -127,15 +133,15 @@ export default {
 @include font('Aftaserif', '../assets/fonts/Aftaserif')
 
 .nail-one
-  transform: rotate(145deg)
-  width: 20px
-  height: 20px
+    transform: rotate(145deg)
+    width: 20px
+    height: 20px
 
 .nail-two
-  transform: rotate(45deg)
-  width: 20px
-  height: 20px
-  z-index: 1
+    transform: rotate(45deg)
+    width: 20px
+    height: 20px
+    z-index: 1
 
 .app-bar a
     color: white
@@ -174,6 +180,11 @@ hr
 .skills-and-desc
     display: flex
 
+.footer-div
+    background-color: orange
+    padding-left: 1em
+    opacity: 50%
+
 @media (min-width: 1450px)
     .header
         margin-left: 2em
@@ -197,4 +208,27 @@ hr
 
     .skills-arrow
         margin-left: 25%
+
+    .skills-desc-div
+        margin-left: 20em
+
+    .arrow-contact
+        position: relative
+        top: -4em
+        z-index: 1
+        left: 35%
+
+    .contact-div
+        width: 700px
+        height: 500px
+        padding: 2em
+        position: relative
+        top: -15em
+        left: 30%
+        text-align: justify
+        font-size: 1.6em
+
+
+
+
 </style>

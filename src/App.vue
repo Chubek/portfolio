@@ -28,6 +28,8 @@ body {
   background-repeat: repeat;
   background-position: right top;
   max-width: 100%;
+  margin-bottom: -10em;
+  padding: 0px;
   overflow-x: hidden;
 }
 </style>
