@@ -55,6 +55,19 @@ export default {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
     font-size: 1.2em
     color: white
-    
+@media (max-width: 968px)
+    .main-div > div > div:nth-child(2)
+        background-color: #994d00
+        width: 300px
+        margin-top: -10%
+        margin-left: 7%
+        margin-bottom: 2em
+        text-align: justify
+        padding: 2em
+        border-radius: 2em
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+        font-size: 1.2em
+        color: white
+
 
 </style>

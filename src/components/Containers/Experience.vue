@@ -156,4 +156,47 @@ export default {
     .experience-div-three
         margin-left: 40%
 
+@media (max-width: 1450px)
+    .experience-text-one
+        position: absolute
+        top: 25em
+        left: 30em
+        width: 15em
+        text-align: justify
+
+    .experience-text-two
+        position: absolute
+        top: 15em
+        right: 26em
+        width: 15em
+        text-align: justify
+ 
+
+    .experience-text-three        
+        position: absolute
+        top: 25em
+        left: 20em
+        width: 25em
+        text-align: justify
+
+
+    .experience-text-four
+        position: absolute
+        top: 18em
+        left: 30em
+        width: 18em
+        text-align: justify
+
+
+    .experience-text-five
+        position: absolute
+        top: 12em
+        right: 15em
+        width: 14em
+        text-align: justify
+
+    .experience-div-three
+        margin-left: 40%
+
+
 </style>

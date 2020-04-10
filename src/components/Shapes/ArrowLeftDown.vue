@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="arrow">
     <svg
       id="Layer_1"
       data-name="Layer 1"
@@ -8,7 +8,7 @@
       height="600"
       viewBox="0 0 512 512"
     >
-      <title>arrow-right-down-glyph</title>
+      
      
         <g transform="translate(0, -20) scale(0.5, 0.5)" fill="#991f00">
           <polygon
@@ -68,4 +68,7 @@ export default {
 
 .text
     font-family: 'IndieFlower'
+
+.arrow
+    height: 200px
 </style>

@@ -23,6 +23,16 @@ div.main-div
 
     div.arabesque-div-large
         arabesque(width="1200" height="1200")
+
+    div.arabesque-div-medium
+        arabesque(width="800" height="800")
+
+    div.arabesque-div-small
+        arabesque(width="600" height="600")
+
+    div.arabesque-div-extra-small
+        arabesque(width="400" height="400")
+
         
     section(id="intro")
         div.intro-arrow
@@ -62,7 +72,7 @@ div.main-div
             div.skills-div
                 skills(width="512" height="512" imageWidth="225" imageHeight="218")
 
-            duv.skills-desc-div
+            div.skills-desc-div
                 div.skills-desc-one
                     skills-description(skillDescOne width="400" height="200" skillDescription=STR_SKILL_AI)
     
@@ -171,11 +181,7 @@ hr
     border: 4px dotted #b30000
     border-radius: 5px
 
-.experiences
-    display: flex
-    flex-wrap: wrap
-    align-items: center
-    margin-top: 20em
+
 
 .skills-and-desc
     display: flex
@@ -183,7 +189,15 @@ hr
 .footer-div
     background-color: orange
     padding-left: 1em
-    opacity: 50%
+    opacity: 25%
+
+.contact-div a
+    color: white
+    border: 1px solid
+    padding: 3px
+    margin-bottom: 1em
+    border-radius: 1em
+    text-decoration: none
 
 @media (min-width: 1450px)
     .header
@@ -193,6 +207,12 @@ hr
         position: absolute
         top: -5em
         right: -4em
+    .arabesque-div-medium
+        display: none
+    .arabesque-div-small
+        display: none
+    .arabesque-div-extra-small
+        display: none
     .blurbs-intro
         margin-top: -10em
         margin-bottom: -20em
@@ -214,21 +234,147 @@ hr
 
     .arrow-contact
         position: relative
-        top: -4em
+        top: -8em
         z-index: 1
         left: 35%
+        padding: 0
+        margin: 0
 
     .contact-div
         width: 700px
         height: 500px
         padding: 2em
-        position: relative
-        top: -15em
+        position: relative        
         left: 30%
         text-align: justify
         font-size: 1.6em
+    .experiences
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        margin-top: 20em
 
 
+@media (max-width: 1450px)
+    .arabesque-div-large
+        display: none
 
+    .arabesque-div-medium
+        position: absolute
+        top: -40px
+        right: -40px
+
+    .intro-arrow
+        margin-left: 25%
+
+    .experience-arrow
+        position: absolute
+        top: 168em
+        left: 25%
+
+    .skills-arrow
+        margin-left: 25%
+        
+    .skills-desc-div
+        margin-left: 13em
+
+    .arrow-contact
+        position: relative
+        top: -8em
+        z-index: 1
+        left: 35%
+        padding: 0
+        margin: 0
+
+    .contact-div
+        width: 700px
+        height: 500px
+        padding: 2em
+        position: relative        
+        left: 30%
+        text-align: justify
+        font-size: 1.6em
+    .experiences
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        margin-top: 20em
+
+@media (max-width: 968px)
+    .arabesque-div-large
+        display: none
+    .arabesque-div-medium
+        display: none
+    .arabesque-div-small
+        position: absolute
+        top: -3em
+        left: 28em
+    .experience-arrow
+        position: absolute
+        top: 138em
+        left: 10%
+    .experiences
+        display: flex
+        flex-direction: column        
+        align-items: right
+        margin-top: 10em
+        flex-grow: 1
+        justify-content: flex-start
+    .experience-div-three
+        position: relative
+        left: -24em
+    .skills-arrow
+        position: relative
+        right: 10em
+    .skills-and-desc
+        display: flex
+        flex-direction: column
+    .skills-desc-div
+        margin-left: 20em
+    #contact
+        margin-right: 30em
+    .arrow-contact
+        margin-left: 5em
+        
+@media (max-width: 768px)
+    .arabesque-div-large
+        display: none
+    .arabesque-div-medium
+        display: none
+    .arabesque-div-small
+        display: none
+    .arabesque-div-extra-small
+        position: absolute
+        top: -2em
+        right: -1em
+    .intro-arrow
+        position: relative
+        right: 5em
+    .experience-arrow
+        position: relative
+        top: -8em
+        margin-left: -7em
+    .experiences
+        display: flex
+        flex-direction: column        
+        align-items: right
+        margin-top: -30em
+        flex-grow: 1
+        justify-content: flex-start
+    .experiences > div
+        margin-left: -10em
+    .skills-arrow
+        position: relative
+        right: 15em
+    .skills-div
+        margin-left: 4em
+    .skills-desc-div
+        margin-left: 14em
+    #contact
+        margin-right: 45em
+    .arrow-contact
+        margin-left: 5em
+
+    
 
 </style>

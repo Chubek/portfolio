@@ -52,4 +52,49 @@ export default {
     padding: 2px
     font-size: 60
     transform: scale(2)
+
+@media (max-width: 1450px)
+  .intro-blurb
+    position: absolute
+    top: 105em
+    left: 35em
+    width: 20em
+    text-align: left
+    text-align: justify
+    padding: 2px
+    font-size: 60
+    transform: scale(1.4)
+
+@media (max-width: 968px)
+  .intro-blurb
+    position: absolute
+    top: 93em
+    left: 22em
+    width: 20em
+    text-align: left
+    text-align: justify
+    padding: 2px
+    font-size: 60
+    transform: scale(1.0)
+
+@media (max-width: 768px)
+  .intro-blurb
+    position: absolute
+    top: 85em
+    left: 15em
+    width: 20em
+    text-align: left
+    text-align: justify
+    padding: 2px
+    font-size: 60
+    transform: scale(0.8)
+  .blog-svg
+    position: relative
+    shape-outside: circle(50%)
+    width: 200px
+    height: 200px
+
+
+
+
 </style>
